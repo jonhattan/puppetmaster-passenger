@@ -23,6 +23,7 @@ hieradata:
 
 ```yaml
 classes:
+- 'apache'
 - 'puppetdb'
 - 'puppetmaster'
 - 'puppetmaster_passenger'
