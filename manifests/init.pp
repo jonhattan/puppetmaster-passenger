@@ -25,7 +25,7 @@ class puppetmaster_passenger inherits puppetmaster_passenger::params {
   }
   apache::conf {'puppetmasterd':
     directives => [
-      Listen 8140
+      'Listen 8140'
     ],
   }
   @apache::vhost { 'puppetmaster' :
@@ -34,7 +34,7 @@ class puppetmaster_passenger inherits puppetmaster_passenger::params {
     # dir_options    => ['FollowSymLinks'],
     # allow_override => 'All',
     ensure_www       => absent,
-    vhost_directives => template('puppetmaster_passenger/puppetmaster.conf.erb'),
+    vhost_directives => [template('puppetmaster_passenger/puppetmaster.conf.erb')]
   }
 }
 
