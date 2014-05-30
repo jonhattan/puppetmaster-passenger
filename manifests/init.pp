@@ -22,7 +22,9 @@ class puppetmaster_passenger inherits puppetmaster_passenger::params {
   }
 
   # Install required modules.
-  @apache::module {['headers', 'ssl']: }
+  @apache::module {['headers', 'ssl']:
+    package => $apache::params::package,
+  }
 
   # Install passenger and virtualhost.
   @apache::module {'passenger':
