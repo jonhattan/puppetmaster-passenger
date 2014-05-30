@@ -21,6 +21,9 @@ class puppetmaster_passenger inherits puppetmaster_passenger::params {
     source => 'puppet:///modules/puppetmaster_passenger/config.ru',
   }
 
+  # Install required modules.
+  @apache::module {['headers', 'ssl']: }
+
   # Install passenger and virtualhost.
   @apache::module {'passenger':
     package => $package,
