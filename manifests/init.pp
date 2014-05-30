@@ -39,9 +39,6 @@ class puppetmaster_passenger inherits puppetmaster_passenger::params {
   @apache::vhost { 'puppetmaster' :
     ports            => 8140,
     doc_root         => '/usr/share/puppet/rack/puppetmasterd/public/',
-    # dir_options    => ['FollowSymLinks'],
-    # allow_override => 'All',
-    ensure_www       => absent,
     vhost_directives => [template('puppetmaster_passenger/puppetmaster.conf.erb')]
   }
 }
