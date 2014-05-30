@@ -2,6 +2,9 @@
 
 class puppetmaster_passenger inherits puppetmaster_passenger::params {
   # Install the Puppet Master Rack Application.
+  file {'/usr/share/puppet/rack':
+    ensure => directory,
+  }
   file {'/usr/share/puppet/rack/puppetmasterd':
     ensure => directory,
   }
