@@ -1,0 +1,12 @@
+# MANAGED BY PUPPET!
+PassengerHighPerformance <%= passenger_high_performance %>
+# Set this to about 1.5 times the number of CPU cores in your master:
+PassengerMaxPoolSize <%= passenger_max_pool_size %>
+# Recycle master processes after they service 1000 requests
+PassengerMaxRequests <%= passenger_max_requests %>
+# Stop processes if they sit idle for 10 minutes
+PassengerPoolIdleTime <%= passenger_pool_idle_time %>
+
+PassengerStatThrottleRate <%= passenger_stat_throttle_rate %>
+RailsAutoDetect <%= rails_auto_detect %>
+
