@@ -28,15 +28,18 @@ classes:
 - 'puppetmaster'
 - 'puppetmaster_passenger'
 
-puppetdb::params::database               : 'embedded'
-puppetdb::master::config::restart_puppet : false
+puppetdb::database           : "embedded"
+puppetdb::ssl_listen_address : "127.0.0.1"
+
+puppetdb::master::config::puppet_service_name : "apache2"
+puppetdb::master::config::puppetdb_server     : "puppet"
 
 puppetmaster::puppetmaster_service_ensure : 'stopped'
 puppetmaster::puppetmaster_service_enable : false
 puppetmaster::puppetmaster_report         : true
 puppetmaster::puppetmaster_autosign       : false
-puppetmaster::puppetmaster_reports        : 'store,http'
-puppetmaster::puppetmaster_reporturl      : 'http://localhost:3000/reports/upload'
+puppetmaster::puppetmaster_reports        : 'store'
+puppetmaster::puppetmaster_environmentpath : '$confdir/environments'
 
 puppetmaster_passenger::params::passenger_max_pool_size : 12
 ```
