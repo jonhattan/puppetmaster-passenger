@@ -12,6 +12,10 @@
   PassengerPoolIdleTime <%= @passenger_pool_idle_time %>
 
   PassengerStatThrottleRate <%= @passenger_stat_throttle_rate %>
+<%- if @passenger_version == 3 %>
   RailsAutoDetect <%= @rails_auto_detect %>
+<%- else %>
+  PassengerRoot <%= @passenger_root %>
+<%- end %>
 
 </IfModule>
